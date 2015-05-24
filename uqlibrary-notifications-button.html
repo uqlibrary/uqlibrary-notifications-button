@@ -1,5 +1,6 @@
 <link rel="import" href="../core-icons/social-icons.html">
 <link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../notification-elements/notification-alert.html">
 
 
 <!--
@@ -22,13 +23,26 @@ icon=notifications (plus number?) when has notifications
     <template>
         <style>
         </style>
-                        <core-icon-button icon="social:notifications-none"></core-icon-button>
+                        <core-icon-button icon="social:notifications-none" on-tap="{{notify}}"></core-icon-button>
+        <notification-alert
+                id="notification"
+                header="This is an example notification"
+                message="(e.g. 'You have an overdue book!')"
+                name="UQLibrary Notification"
+                autoClose="0"
+                icon="http://www.library.uq.edu.au"
+                on-notification-dismissed="{{dismissed}}"></notification-alert>
     </template>
     <script>
         Polymer('uqlibrary-notifications-button', {
 
             ready: function () {
+            },
+            notify: function() {
+                this.$.notification.notify();
             }
         });
+
+
     </script>
 </polymer-element>
