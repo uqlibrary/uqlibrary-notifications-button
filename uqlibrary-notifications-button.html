@@ -20,42 +20,39 @@ icon=notifications (plus number?) when has notifications
 -->
 
 <polymer-element name="uqlibrary-notifications-button" attributes="allowDesktopNotifications">
-    <template>
-        <style>
-        </style>
-        <core-icon-button icon="social:notifications-none" on-tap="{{notify}}"></core-icon-button>
-        <notification-alert
-                hidden?="!allowDesktopNotifications"
-                id="notification"
-                header="This is an example notification"
-                message="(e.g. 'You have an overdue book!')"
-                name="UQLibrary Notification"
-                autoClose="0"
-                icon="http://www.library.uq.edu.au"
-                on-notification-dismissed="{{dismissed}}"></notification-alert>
-    </template>
-    <script>
-        Polymer('uqlibrary-notifications-button', {
-            publish: {
-                /**
-                 * The `header` property sets the title of the notification.
-                 *
-                 * @attribute header
-                 * @type string
-                 * @default ''
-                 */
-                allowDesktopNotifications: 'false'
-            },
-            ready: function () {
-            },
-            notify: function() {
-                console.log(!this.allowDesktopNotifications);
-                if (!this.allowDesktopNotifications) {
-                    this.$.notification.notify();
-                }
-            }
-        });
+  <template>
+    <core-icon-button icon="social:notifications-none" on-tap="{{notify}}"></core-icon-button>
+    <notification-alert
+      hidden?="!allowDesktopNotifications"
+      id="notification"
+      header="This is an example notification"
+      message="(e.g. 'You have an overdue book!')"
+      name="UQLibrary Notification"
+      autoClose="0"
+      icon="http://www.library.uq.edu.au"
+      on-notification-dismissed="{{dismissed}}"></notification-alert>
+  </template>
+  <script>
+    Polymer('uqlibrary-notifications-button', {
+      publish: {
+        /**
+         * The `header` property sets the title of the notification.
+         *
+         * @attribute header
+         * @type string
+         * @default ''
+         */
+        allowDesktopNotifications: 'false'
+      },
+      ready: function () {
+      },
+      notify: function() {
+        if (!this.allowDesktopNotifications) {
+          this.$.notification.notify();
+        }
+      }
+    });
 
 
-    </script>
+  </script>
 </polymer-element>
