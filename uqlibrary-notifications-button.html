@@ -1,6 +1,10 @@
 <link rel="import" href="../core-icons/social-icons.html">
 <link rel="import" href="../core-icon-button/core-icon-button.html">
 <link rel="import" href="../notification-elements/notification-alert.html">
+<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<link rel="import" href="../uqlibrary-apps-button/x-trigger.html">
 
 
 <!--
@@ -21,7 +25,23 @@ icon=notifications (plus number?) when has notifications
 
 <polymer-element name="uqlibrary-notifications-button" attributes="allowDesktopNotifications">
   <template>
-    <core-icon-button icon="social:notifications-none" on-tap="{{notify}}"></core-icon-button>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
+    <link rel="stylesheet" href="uqlibrary-notitications-button.css">
+
+    <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
+    <x-trigger icon="social:notifications-none" on-tap="{{notify}}">
+      <paper-dropdown halign="right" class="open-below">
+
+        <div flex horizontal layout wrap center-justified>
+          <a href="#" class="app">
+            <p class="iconLabel" for>Notifications</p>
+          </a>
+        </div>
+
+      </paper-dropdown>
+    </x-trigger>
+
+    <!--<core-icon-button icon="social:notifications-none" on-tap="{{notify}}"></core-icon-button>-->
     <notification-alert
       hidden?="!allowDesktopNotifications"
       id="notification"
