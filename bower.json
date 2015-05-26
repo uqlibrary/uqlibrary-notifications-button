@@ -28,12 +28,12 @@
   "license": "MIT",
   "homepage": "https://github.com/uqlibrary/uqlibrary-notifications-button",
   "dependencies": {
-    "uqlibrary-api": "uqlibrary/uqlibrary-api",
-    "uqlibrary-elements": "uqlibrary/uqlibrary-elements",
-    "notification-elements": "PolymerLabs/notification-elements#0.5",
+    "polymer": "Polymer/polymer#0.5.4",
     "core-elements": "Polymer/core-elements#0.5.4",
     "paper-elements": "Polymer/paper-elements#0.5.4",
-    "web-animations-js": "web-animations/web-animations-js"
+    "web-animations-js": "web-animations/web-animations-js",
+    "notification-elements": "PolymerLabs/notification-elements#0.5",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#master"
   },
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
