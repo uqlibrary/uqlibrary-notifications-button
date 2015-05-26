@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAEA,WAAY;EACV,GAAG,EAAE,IAAI",
-"sources": ["uqlibrary-notitications-button.scss"],
+"mappings": "AAEA,WAAY;EACV,GAAG,EC8CY,IAAI",
+"sources": ["uqlibrary-notitications-button.scss","../uqlibrary-elements/resources/theme/_variables.scss"],
 "names": [],
 "file": "uqlibrary-notitications-button.css"
 }
