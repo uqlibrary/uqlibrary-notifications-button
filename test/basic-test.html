@@ -26,32 +26,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <script>
       var myEl = document.querySelector('uqlibrary-notifications-button');
+      var myElTrigger = document.querySelector('uqlibrary-notifications-button /deep/ x-trigger');
 
       suite('<uqlibrary-notifications-button>', function() {
 
-        test('notifications button handles taps correctly', function(done) {
+        test('notifications button handles taps correctly', function() {
           document.querySelector('html /deep/ x-trigger').fire('tap');
           setTimeout(function() {
             //check that paper dropdown menu appears
             expect(document.querySelector('html /deep/ paper-dropdown').style.display).to.not.equal('none');
-            done();
 
           }, 300);
         });
 
-        test('notifications button appears correctly', function() {
+        test('notifications button appears correctly', function(done) {
           assert.equal(myEl.nodeName.toLowerCase(), 'uqlibrary-notifications-button');
-          assert.equal(myEl.nodeName.toLowerCase(), 'uqlibrary-notifications-button');
+          assert.equal(myElTrigger.icon, 'social:notifications-none');
+          done();
         });
-//
-//        test('fires lasers', function(done) {
-//          myEl.addEventListener('seed-element-lasers', function(event) {
-//            assert.equal(event.detail.sound, 'Pew pew!');
-//            done();
-//          });
-//          myEl.fireLasers();
-//        });
-
       });
     </script>
 
