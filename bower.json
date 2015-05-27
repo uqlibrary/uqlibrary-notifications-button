@@ -33,6 +33,7 @@
     "paper-elements": "Polymer/paper-elements#0.5.4",
     "web-animations-js": "web-animations/web-animations-js",
     "notification-elements": "PolymerLabs/notification-elements#0.5",
+    "uqlibrary-api": "uqlibrary/x-trigger#master",
     "uqlibrary-api": "uqlibrary/uqlibrary-api#master"
   },
   "devDependencies": {
